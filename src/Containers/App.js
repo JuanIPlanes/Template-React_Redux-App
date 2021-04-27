@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useRef } from "react";
 
-import * as actionsCreators from "../redux/action";
+import * as actionsCreators from "../redux/action.action";
 
 import Form from "../Components/NewComponent";
 
@@ -16,7 +16,7 @@ const App = ({ recipe, loading, recivedRecipe: RR, getRecipe, setRecipe }) => {
       <div className="App">
         <Form
           recipe={recipe.value}
-          loading={loading}
+          loading={loading.toString()}
           lareff={lareff}
           HC={HC}
           Input
@@ -30,7 +30,7 @@ const App = ({ recipe, loading, recivedRecipe: RR, getRecipe, setRecipe }) => {
 
 const mapStateToProps = ({ loading, recipe, msg }) => {
   return {
-    loading: loading,
+    loading: loading.toString(),
     recipe: recipe,
     msg: msg
   };
